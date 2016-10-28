@@ -1,0 +1,14 @@
+{%extends '::base.html.twig'%}
+{% block body %}
+    <form method="POST" action="{{path("homepage_create_account")}}">
+        {{form_label(form.username)}}
+        {{form_widget(form.username)}}
+        {{form_label(form.password.first)}}
+        {{form_widget(form.password.first)}}
+        {{form_label(form.password.second)}}
+        {{form_widget(form.password.second)}}
+        {{form_widget(form.role)}}
+        <br/>
+        <input type="submit" value="Créer"/>
+    </form>
+{% endblock %}
