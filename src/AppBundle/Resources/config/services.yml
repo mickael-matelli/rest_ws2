@@ -1,0 +1,15 @@
+parameters:
+    test1.class: AppBundle\Manager\ChildrenOne
+    test2.class: AppBundle\Manager\ChildrenTwo
+services:
+    abscract.service.parent:
+        abstract:  true
+        arguments: ['@doctrine.orm.entity_manager']
+        calls:
+            - [setLogger, ['@logger']]
+    service.user.children1:
+        class: %test1.class%
+        parent: abscract.service.parent
+    service.user.children2:
+        class: %test2.class%
+        parent: abscract.service.parent
