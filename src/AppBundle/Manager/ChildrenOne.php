@@ -13,4 +13,9 @@ class ChildrenOne extends ParentT
         $this->logger->warning('vous êtes connecté');
     }
 
+    public function TestNoParam()
+    {
+        return 'salut daholo';
+    }
+
 }

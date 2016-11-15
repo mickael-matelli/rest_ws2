@@ -27,6 +27,8 @@ class TestCommand extends ContainerAwareCommand
         $child1->getNameCommand($name);
         $child2->delete($name);
         $output->writeln('votre nom est ' . $name);
+        $myService = $container->get('service.my');
+        $output->writeln($myService->getMessage());
     }
 
 }

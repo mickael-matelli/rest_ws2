@@ -1,6 +1,7 @@
 parameters:
     test1.class: AppBundle\Manager\ChildrenOne
     test2.class: AppBundle\Manager\ChildrenTwo
+    mon.service: AppBundle\Manager\MonService
 services:
     abscract.service.parent:
         abstract:  true
@@ -13,3 +14,6 @@ services:
     service.user.children2:
         class: %test2.class%
         parent: abscract.service.parent
+    service.my:
+        class: %mon.service%
+        arguments: ["@=service('service.user.children1').TestNoParam()"]
